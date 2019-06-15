@@ -1,0 +1,22 @@
+{% extends 'rede/base.html' %}
+{% block topo %}
+<div class="header clearfix  col-md-6 offset-md-3">
+  <nav>
+    <ul class="nav nav-pills float-right">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
+    </ul>
+  </nav>
+  <h3 class="text-muted">{{ user.username }}</h3>
+</div>
+{% endblock %}
+{% block conteudo %}
+  <div class="container">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn btn-primary" type="submit" value="Publicar">
+    </form>
+  </div>
+{% endblock %}
